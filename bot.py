@@ -1,6 +1,7 @@
 from TOKEN import TOKEN
 from telegram.ext import Updater, CommandHandler, Filters, MessageHandler
 import logging
+from logging.handlers import RotatingFileHandler
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s - %(name)s', level=logging.INFO, filename='bot.log')
 
@@ -12,9 +13,14 @@ def greet_user(bot, update):
 
 def talk_to_me(bot, update):
     user_text = bot.message.text
-    logging.info(user_text)
-    bot.message.reply_text(user_text)
-
+    # logging.info(f'Пользователь написал: {user_text}')
+    logging.info('User, %s, Chat id, %s, Message: %s', bot.message.chat.username, 
+    bot.message.chat.id, 
+    bot.message.text, 
+    )
+    bot.message.reply_text('Привет {}!, Как дела? '.format(bot.message.chat.first_name))
+    print(bot.message)
+    # bot.message.reply_text()
 def main():
 
     logging.info('Бот запускается')
