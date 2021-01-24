@@ -2,3 +2,4 @@ venv/
 .vscode/
 TOKEN.py
 __pycache__/
+bot.log
