@@ -11,7 +11,9 @@ def greet_user(bot, update):
     bot.message.reply_text(text)
 
 def talk_to_me(bot, update):
-    pass
+    user_text = bot.message.text
+    logging.info(user_text)
+    bot.message.reply_text(user_text)
 
 def main():
 
