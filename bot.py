@@ -1,5 +1,5 @@
 from TOKEN import TOKEN
-from telegram.ext import Updater, CommandHandler
+from telegram.ext import Updater, CommandHandler, Filters, MessageHandler
 import logging
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s - %(name)s', level=logging.INFO, filename='bot.log')
@@ -10,6 +10,8 @@ def greet_user(bot, update):
     # print(dir(bot))
     bot.message.reply_text(text)
 
+def talk_to_me(bot, update):
+    pass
 
 def main():
 
@@ -25,6 +27,8 @@ def main():
     #Обработка старт
     dp.add_handler(CommandHandler('start', greet_user))
 
+    #Обработка сообщиний
+    dp.add_handler(MessageHandler(Filters.text, talk_to_me))
 
     
     mybot.start_polling()
