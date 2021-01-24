@@ -1,4 +1,4 @@
-from TOKEN import TOKEN
+from settings import TOKEN
 from telegram.ext import Updater, CommandHandler, Filters, MessageHandler
 import logging
 from logging.handlers import RotatingFileHandler

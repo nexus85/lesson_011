@@ -1,5 +1,5 @@
 venv/
 .vscode/
-TOKEN.py
+settings.py
 __pycache__/
-bot.log
+*.log
