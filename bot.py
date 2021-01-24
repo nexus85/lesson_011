@@ -1,6 +1,8 @@
 from TOKEN import TOKEN
 from telegram.ext import Updater, CommandHandler
+import logging
 
+logging.basicConfig(format='%(name)s - %(levelname)s - %(message)s', lovel=logging.INFO, filename='bot.log')
 
 def greet_user(bot, update):
     text = 'Вызван /start'
